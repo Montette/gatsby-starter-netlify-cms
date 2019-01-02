@@ -5,13 +5,13 @@ backend:
 media_folder: static/img
 public_folder: /img
 
-collections:
-  - name: "blog"
-    label: "Blog"
+collections: # list of collections the CMS should be able to edit
+  - name: "blog" # use in routes
+    label: "Blog" # use in UI
     folder: "src/pages/blog"
-    create: true
+    create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
+    fields:  # The fields each document in this collection have
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
